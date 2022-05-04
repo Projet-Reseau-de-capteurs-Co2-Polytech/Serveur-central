@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('Bdd.php');
-include("../Model/user.php");
+include('bdd.php');
+include("../model/user.php");
 
         //requête SQL
 		$PseudoInput = $_POST['Pseudo'];
@@ -24,14 +24,14 @@ include("../Model/user.php");
 			$_SESSION['etat']=1;
 			
 		//acces à l'acueil
-			header('Location:../View/Accueil.php');
+			header('Location:../view/accueil.php');
 			}
 		else {
 			echo "Pseudo = ".$Pseudo."";
 			echo "PseudoInput = ".$PseudoInput."";
 			echo "".$decryptmdp."";
 			echo "empty ? ".empty($PseudoInput)."";
-			//header('Location:../View/index.php?msg=err');
+			header('Location:../index.php?msg=err');
 		  	exit();
 		}
 

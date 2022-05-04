@@ -13,7 +13,7 @@
   <main>  
     <div class="container-fluid shadow bg-body rounded fixed-top">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
           <img class ="img-fluid" src="https://www.ville-chambray-les-tours.fr/wp-content/themes/chambray-les-tours/assets/img/logo-footer.png" height="150" width="150" alt=""/>
           <p class="text-start fs-2 fw-bold align-content-center" style="margin: 1rem;">Plateforme CO2</p>
         </a>

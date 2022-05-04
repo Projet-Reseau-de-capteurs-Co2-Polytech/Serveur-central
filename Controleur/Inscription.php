@@ -1,6 +1,6 @@
 <?php
-include('Bdd.php');
-include("../Model/user.php");
+include('bdd.php');
+include("../model/user.php");
 
 $etat=0;
 

@@ -1,6 +1,6 @@
 <?php 
 
-include('../Controleur/Bdd.php');
+include('../controleur/bdd.php');
 
 function getUser($pseudo){
 	global $bd;
