@@ -10,6 +10,7 @@ $mdp=$_POST['Mdp'];
 $user=getUser($pseudo);
 $BddUser=$user[0];
 
+echo "".$id."";
 
 
 if($BddUser['Pseudo']!=$pseudo){
@@ -22,7 +23,7 @@ if($BddUser['Pseudo']!=$pseudo){
 
 	
 	//redirige vers la page acueil du site
-	header("Location: ../view/inscription.php?msg=inscrit");
+	header("Location: ../view/inscription.php?err=0");
 	exit();
 }else{
 	//redirige vers la page index du site avec un message d'erreur
