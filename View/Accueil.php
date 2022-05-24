@@ -1,3 +1,41 @@
+<?php 
+include("../controleur/redirection.php");
+require("../model/batiment.php");
+
+//utilise model/batiment.php
+$Batiments = getBatiments($_SESSION['id']);
+$i=0;
+$idBat="";
+foreach($Batiments as $bat){
+	$i++;
+	$idBat=$bat['idBat'];
+}
+if($i==1){
+	header("Location:../controleur/redirectionSalle.php?bat=".$idBat."");
+}
+
+function createBatBox($idBat,$nomBat){
+	echo'
+
+    <div class="container-fluid">
+      <div class="row justify-content-start">
+        <div class="col-1"></div>
+        <div class="col-4">
+          <div class="card shadow bg-body rounded" style="height:8rem; width: 80rem;">
+            <div class="card-body">
+              <a href="../controleur/redirectionSalle.php?bat='.$idBat.'" class="btn btn-outline-primary btn-lg fs-1" style="height: 6rem; width: 77rem;">'.$nomBat.'</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid" style="height: 1rem;"></div>
+    </div>';
+}
+
+
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,73 +49,18 @@
 </head>
 <body>  
   <main>  
-    <div class="container-fluid shadow bg-body rounded fixed-top">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <img class ="img-fluid" src="https://www.ville-chambray-les-tours.fr/wp-content/themes/chambray-les-tours/assets/img/logo-footer.png" height="150" width="150" alt=""/>
-          <p class="text-start fs-2 fw-bold align-content-center" style="margin: 1rem;">Plateforme CO2</p>
-        </a>
-  
-        <ul class="nav nav-pills align-content-center">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Accueil</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Bâtiments</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Profil</a></li>
-        </ul>
-      </header>
-    </div>
-    <div class="container-fluid" style="height: 13rem;"></div>
-    <div class="container-fluid">
-      <div class="row justify-content-start">
-        <div class="col-1"></div>
-        <div class="col-4">
-          <div class="card shadow bg-body rounded" style="height:8rem; width: 80rem;">
-            <div class="card-body">
-              <a href="#" class="btn btn-outline-primary btn-lg fs-1" style="height: 6rem; width: 77rem;">Nom du Bâtiment</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid" style="height: 5rem;"></div>
-    </div>
-    <div class="container-fluid">
-      <div class="row justify-content-start">
-        <div class="col-1"></div>
-        <div class="col-4">
-          <div class="card shadow bg-body rounded" style="height:8rem; width: 80rem;">
-            <div class="card-body">
-              <a href="#" class="btn btn-outline-primary btn-lg fs-1" style="height: 6rem; width: 77rem;">Nom du Bâtiment</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid" style="height: 5rem;"></div>
-    </div>
-    <div class="container-fluid">
-      <div class="row justify-content-start">
-        <div class="col-1"></div>
-        <div class="col-4">
-          <div class="card shadow bg-body rounded" style="height:8rem; width: 80rem;">
-            <div class="card-body">
-              <a href="#" class="btn btn-outline-primary btn-lg fs-1" style="height: 6rem; width: 77rem;">Nom du Bâtiment</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid" style="height: 5rem;"></div>
-    </div>
-    <div class="container-fluid">
-      <div class="row justify-content-start">
-        <div class="col-1"></div>
-        <div class="col-4">
-          <div class="card shadow bg-body rounded" style="height:8rem; width: 80rem;">
-            <div class="card-body">
-              <a href="#" class="btn btn-outline-primary btn-lg fs-1" style="height: 6rem; width: 77rem;">Nom du Bâtiment</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid" style="height: 5rem;"></div>
-    </div>
+	
+	<div class="container-fluid shadow bg-body rounded fixed-top">
+	    <?php include("headerUser.php");?>
+	</div>
+	<div class="container-fluid" style="height: 13rem;"></div>
+	<?php
+	
+	foreach($Batiments as $bat){
+		createBatBox($bat['idBat'],$bat['NomBatiment']);
+	}
+	?>
+    
   </main>  
 </body>
 </html>

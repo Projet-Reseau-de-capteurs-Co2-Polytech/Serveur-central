@@ -18,6 +18,7 @@ include("../model/user.php");
 
 		//ouverture de la session
 		if($Pseudo==$PseudoInput && $decryptmdp==1 && empty($PseudoInput)==false){
+			session_start();
 			$_SESSION['pseudo']=$compte['Pseudo'];
 			$_SESSION['mdp']=$compte['Mdp'];
 			$_SESSION['id']=$compte['idUtilisateur'];

@@ -1,3 +1,3 @@
 <?php
-echo date("{y-m-d//h:m:s}");
+echo date("{y-m-d h:m:s}");
 ?>

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Robin Lejeune">
-    <title>Page Admin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Robin Lejeune">
+  <title>Page Admin</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+     
 </head>
 <body>
 
@@ -25,22 +30,10 @@
   <body>
     <main>  
       <div class="container-fluid shadow bg-body rounded fixed-top">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <img class ="img-fluid" src="https://www.ville-chambray-les-tours.fr/wp-content/themes/chambray-les-tours/assets/img/logo-footer.png" height="150" width="150" alt=""/>
-            <p class="text-start fs-2 fw-bold align-content-center" style="margin: 1rem;">Plateforme CO2</p>
-            <p class="text-start fs-3 fw-bold align-content-center" style="margin: 1rem;">Page Admin</p>
-            <ul class="nav nav-pills align-content-center justify-content-center" style="margin-right: 35rem;">
-              <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Users</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Bâtiments</a></li>
-            </ul>
-          </a>
-          <ul class="nav nav-pills align-content-center">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Accueil</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Bâtiments</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Profil</a></li>
-          </ul>
-        </header>
+        <?php 
+			require("headerAdmin.php");
+			headerUser();
+		?>
       </div>
       <div class="container-fluid" style="height: 13rem;"></div>
       
@@ -75,6 +68,8 @@
       
       <!-- Modal Windows -->
 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
       <div class="modal fade" id="ModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -92,9 +87,8 @@
                   <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
                   <input type="password" class="form-control" id="exampleInputPassword1">
                 </div>
-                <label for="exampleInputPassword1" class="form-label">Droit d'accès</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Bâtiment à choisir</option>
+                <label for="exampleInputPassword1" class="form-label">Bâtiments</label>
+                <select class="form-select" multiple>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -126,9 +120,8 @@
                   <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe Actuel">
                 </div>
-                <label for="exampleInputPassword1" class="form-label">Droit d'accès</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Bâtiment à choisir</option>
+                <label for="exampleInputPassword1" class="form-label">Bâtiments</label>
+                <select class="form-select" multiple>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

@@ -25,22 +25,10 @@
   <body>
     <main>  
       <div class="container-fluid shadow bg-body rounded fixed-top">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <img class ="img-fluid" src="https://www.ville-chambray-les-tours.fr/wp-content/themes/chambray-les-tours/assets/img/logo-footer.png" height="150" width="150" alt=""/>
-            <p class="text-start fs-2 fw-bold align-content-center" style="margin: 1rem;">Plateforme CO2</p>
-            <p class="text-start fs-3 fw-bold align-content-center" style="margin: 1rem;">Page Admin</p>
-            <ul class="nav nav-pills align-content-center justify-content-center" style="margin-right: 35rem;">
-              <li class="nav-item"><a href="#" class="nav-link">Users</a></li>
-              <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Bâtiments</a></li>
-            </ul>
-          </a>
-          <ul class="nav nav-pills align-content-center">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Accueil</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Bâtiments</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Profil</a></li>
-          </ul>
-        </header>
+        <?php 
+			require("headerAdmin.php");
+			headerBat();
+		?>
       </div>
       <div class="container-fluid" style="height: 13rem;"></div>
       
@@ -90,7 +78,6 @@
               </div>
             </div>
           </div>
-          <div class="col-1"></div>
           <div class="col-2">
             <div class="card shadow bg-body rounded">
               <div class="card-body">
@@ -101,7 +88,6 @@
               </div>
             </div>
           </div>
-          <div class="col-1"></div>
           <div class="col-2">
             <div class="card shadow bg-body rounded">
               <div class="card-body">
@@ -112,6 +98,17 @@
               </div>
             </div>
           </div>
+          <div class="col-2">
+            <div class="card shadow bg-body rounded">
+              <div class="card-body">
+                <h4 class="card-title">Nom Salle</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Infos Salle Infos Salle Infos Salle Infos Salle Infos Salle Infos Salle Infos Salle Infos Salle Infos Salle Infos Salle</h6>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalModSalle">Modifier</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalDelSalle">Supprimer</button>
+              </div>
+            </div>
+          </div>
+		  
           <div class="col-1"></div>
         </div>
         <div class="container-fluid" style="height: 5rem;"></div>
@@ -133,6 +130,18 @@
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nom Bâtiment</label>
                   <input type="identifiant" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="Adresse" class="form-label">Adresse</label>
+                  <input type="Adresse" class="form-control" id="Adresse">
+                </div>
+                <div class="mb-3">
+                  <label for="Code Postal" class="form-label">Code Postal</label>
+                  <input type="Code Postal" class="form-control" id="Code Postal">
+                </div>
+                <div class="mb-3">
+                  <label for="Ville" class="form-label">Ville</label>
+                  <input type="Ville" class="form-control" id="Ville">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Nombre de salle</label>
@@ -160,6 +169,18 @@
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nom Bâtiment</label>
                   <input type="identifiant" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="Adresse" class="form-label">Adresse</label>
+                  <input type="Adresse" class="form-control" id="Adresse">
+                </div>
+                <div class="mb-3">
+                  <label for="Code Postal" class="form-label">Code Postal</label>
+                  <input type="Code Postal" class="form-control" id="Code Postal">
+                </div>
+                <div class="mb-3">
+                  <label for="Ville" class="form-label">Ville</label>
+                  <input type="Ville" class="form-control" id="Ville">
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Nombre de salle</label>
@@ -205,8 +226,12 @@
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Nom Salle</label>
-                  <input type="identifiant" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="Nom Salle" class="form-label">Nom Salle</label>
+                  <input type="Nom Salle" class="form-control" id="Nom Salle">
+                </div>
+                <div class="mb-3">
+                  <label for="Id Capteur" class="form-label">Id Capteur</label>
+                  <input type="Id Capteur" class="form-control" id="Id Capteur">
                 </div>
               </form>
             </div>
@@ -228,8 +253,12 @@
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Nom Salle</label>
-                  <input type="identifiant" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="Nom Salle" class="form-label">Nom Salle</label>
+                  <input type="Nom Salle" class="form-control" id="Nom Salle">
+                </div>
+                <div class="mb-3">
+                  <label for="Id Capteur" class="form-label">Id Capteur</label>
+                  <input type="Id Capteur" class="form-control" id="Id Capteur">
                 </div>
               </form>
             </div>
