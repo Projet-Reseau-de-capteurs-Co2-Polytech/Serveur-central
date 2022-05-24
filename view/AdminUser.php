@@ -1,22 +1,45 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Robin Lejeune">
-  <title>Page Admin</title>
+<?php 
+require("../model/user.php");
+function createUserBox($user){
+	$batiments = getBatofUser($user['idUtilisateur']);
+	echo'
+	
+	<div class="container-fluid">
+        <div class="row justify-content-start">
+          <div class="col-1"></div>
+          <div class="col-9">
+            <div class="card shadow bg-body rounded">
+              <div class="card-body">
+                <h4 class="card-title">'.$user['Pseudo'].'</h4>
+                <h6 class="card-subtitle mb-2 text-muted">';
+				foreach($batiments as $bat ){ 
+					echo $bat['NomBatiment']; 
+					echo' ';
+				}
+				
+				echo' </h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalMod">Modifier</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalDel">Supprimer</button>
+          </div>
+        </div>
+        <div class="container-fluid" style="height: 1rem;"></div>
+	</div> 
+	
+	
+	';
+	
+}
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-     
-</head>
-<body>
 
-<!doctype html>
+
+?>
+
+<!Doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -46,25 +69,17 @@
         </div>
         <div class="container-fluid" style="height: 3rem;"></div>
       </div>
-  
-      <div class="container-fluid">
-        <div class="row justify-content-start">
-          <div class="col-1"></div>
-          <div class="col-9">
-            <div class="card shadow bg-body rounded">
-              <div class="card-body">
-                <h4 class="card-title">Nom User</h4>
-                <h6 class="card-subtitle mb-2 text-muted">Infos User Infos User Infos User Infos User Infos User Infos User Infos User Infos User Infos User Infos User Infos User Infos User </h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-2">
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalMod">Modifier</button>
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalDel">Supprimer</button>
-          </div>
-        </div>
-        <div class="container-fluid" style="height: 5rem;"></div>
-      </div>    
+     
+	 <?php
+	 $users = getAllUser();
+	 foreach($users as $user){
+		 createUserBox($user);
+	 }
+	 
+	 
+	 
+	 ?>
+	 
       
       <!-- Modal Windows -->
 

@@ -1,3 +1,4 @@
 <?php
-echo date("{y-m-d h:m:s}");
+date_default_timezone_set('Europe/Paris');
+echo date("{y-m-d H:m:s}");
 ?>
