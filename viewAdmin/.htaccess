@@ -1,6 +1,0 @@
-<Files ./BaseDeDonnee/Cryptage.php>
-	AutType Basic
-	AuthName "Page Admin"
-	AuthUserFile .htpasswd
-	Require valid-user
-</Files>
