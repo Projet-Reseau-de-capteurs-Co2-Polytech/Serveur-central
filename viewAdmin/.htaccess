@@ -1,0 +1,4 @@
+AuthUserFile "C:\wamp64\www\Serveur-central\test\.htpasswd"
+AuthName "Restricted Files"
+AuthType Basic
+Require valid-user
